@@ -32,7 +32,9 @@ type Customer record {|
     string country;
 |};
 
-@test:Config {enable:true}
+// temporary disabling the test because azure db credentials are not configured as git secrets.
+// enable it once we add credentials
+@test:Config {enable:false}
 public function testQueryOperation() returns error? {
     // Runs the prerequisite setup for the example.
     check beforeExample6();
