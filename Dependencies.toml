@@ -1,6 +1,6 @@
 [[dependency]]
 org = "ballerinax"
 name = "mysql"
-version = "0.7.0-alpha9"
+version = "0.7.0-alpha9.1"
 
 

@@ -21,7 +21,7 @@ import ballerinax/mysql;
 public client class Client {
     *sql:Client;
 
-    private final mysql:Client dbClient;
+    private mysql:Client dbClient;
 
     # Initializes the MySQL Client.
     #
@@ -35,7 +35,7 @@ public client class Client {
     #                   If there is no `connectionPool` provided, the global connection pool will be used and it will
     #                   be shared by other clients, which have the same properties
     public isolated function init(string host = "localhost", string? user = (), string? password = (), string? database = (),
-        int port = 3306, mysql:Options? & readonly options = (), sql:ConnectionPool? & readonly connectionPool = ()) returns
+        int port = 3306, mysql:Options? options = (), sql:ConnectionPool? connectionPool = ()) returns
         sql:Error? {
         self.dbClient = check new mysql:Client(host, user,password, database, port, options,
         connectionPool);
