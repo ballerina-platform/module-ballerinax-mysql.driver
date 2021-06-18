@@ -14,8 +14,9 @@
 // specific language governing permissions and limitations
 // under the License.
 
-import ballerina/sql;
+import ballerina/jballerina.java as _;
 import ballerinax/mysql;
+import ballerina/sql;
 
 # Represents a MySQL database client.
 public client class Client {
