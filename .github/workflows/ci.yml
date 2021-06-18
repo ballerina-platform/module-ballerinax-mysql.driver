@@ -15,6 +15,6 @@ jobs:
           args:
             build -c
         env:
-          BASE_URL: ${{ secrets.BASE_URL }}
-          MASTER_OR_RESOURCE_TOKEN: ${{ secrets.MASTER_OR_RESOURCE_TOKEN }}
-                  
+          DB_HOST: ${{ secrets.DB_HOST }}
+          DB_USER: ${{ secrets.DB_USER }}
+          DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
