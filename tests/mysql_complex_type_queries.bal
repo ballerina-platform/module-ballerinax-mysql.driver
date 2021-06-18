@@ -48,7 +48,7 @@ public function testComplexQueries() returns error? {
     check beforeExample4();
 
     // Initializes the MySQL client.
-    Client mysqlClient = check new (host = host, user = user, password = password, database = "MYSQL_BBE", port =
+    Client mysqlClient = check new (host = host, user = user, password = password, database = "MYSQL_BBE_3", port =
                              port, options = {serverTimezone: serverTimezone});
 
     // Since the `rowType` is provided as a `BinaryType`, the `resultStream`
@@ -103,31 +103,31 @@ function beforeExample4() returns sql:Error? {
 
     // Creates a database.
     sql:ExecutionResult result =
-        check mysqlClient->execute(`CREATE DATABASE MYSQL_BBE`);
+        check mysqlClient->execute(`CREATE DATABASE MYSQL_BBE_3`);
     
     // Creates complex data type tables in the database.
-    result = check mysqlClient->execute(`CREATE TABLE MYSQL_BBE.BINARY_TYPES
+    result = check mysqlClient->execute(`CREATE TABLE MYSQL_BBE_3.BINARY_TYPES
             (row_id INTEGER NOT NULL, blob_type BLOB(1024),  
             binary_type BINARY(27), PRIMARY KEY (row_id))`);
-    result = check mysqlClient->execute(`CREATE TABLE MYSQL_BBE.JSON_TYPES
+    result = check mysqlClient->execute(`CREATE TABLE MYSQL_BBE_3.JSON_TYPES
             (row_id INTEGER NOT NULL, json_doc JSON, json_array JSON,
             PRIMARY KEY (row_id))`);
     result = check mysqlClient->execute(
-            `CREATE TABLE MYSQL_BBE.DATE_TIME_TYPES (row_id
+            `CREATE TABLE MYSQL_BBE_3.DATE_TIME_TYPES (row_id
             INTEGER NOT NULL, date_type DATE, time_type TIME, 
             timestamp_type timestamp, datetime_type  datetime, 
             PRIMARY KEY (row_id))`);
 
     // Adds the records to the newly-created tables.
-    result = check mysqlClient->execute(`INSERT INTO MYSQL_BBE.BINARY_TYPES
+    result = check mysqlClient->execute(`INSERT INTO MYSQL_BBE_3.BINARY_TYPES
             (row_id, blob_type, binary_type) VALUES (1,
             X'77736F322062616C6C6572696E6120626C6F6220746573742E',  
             X'77736F322062616C6C6572696E612062696E61727920746573742E')`);
-    result = check mysqlClient->execute(`INSERT INTO MYSQL_BBE.JSON_TYPES
+    result = check mysqlClient->execute(`INSERT INTO MYSQL_BBE_3.JSON_TYPES
             (row_id, json_doc, json_array) VALUES (1, '{"firstName" : "Jhon",
             "lastName" : "Bob", "age" : 18}', JSON_ARRAY(1, 2, 3))`);
     result = check mysqlClient->execute(
-            `Insert into MYSQL_BBE.DATE_TIME_TYPES (row_id,
+            `Insert into MYSQL_BBE_3.DATE_TIME_TYPES (row_id,
             date_type, time_type, timestamp_type, datetime_type) values (1, 
             '2017-05-23', '14:15:23', '2017-01-25 16:33:55', 
             '2017-01-25 16:33:55')`);
@@ -139,7 +139,7 @@ function beforeExample4() returns sql:Error? {
 function afterExample4(Client mysqlClient) returns sql:Error? {
     // Cleans the database.
     sql:ExecutionResult result =
-            check mysqlClient->execute(`DROP DATABASE MYSQL_BBE`);
+            check mysqlClient->execute(`DROP DATABASE MYSQL_BBE_3`);
     // Closes the MySQL client.
     check mysqlClient.close();
 }

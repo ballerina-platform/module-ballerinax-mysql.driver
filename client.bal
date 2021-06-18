@@ -60,8 +60,7 @@ public client class Client {
     #              when the query has params to be passed in
     # + return - Summary of the SQL update query as an `sql:ExecutionResult` or `sql:Error`
     #           if any error occurred when executing the query
-    remote isolated function execute(string|sql:ParameterizedQuery sqlQuery)
-     returns sql:ExecutionResult|sql:Error {
+    remote isolated function execute(string|sql:ParameterizedQuery sqlQuery) returns sql:ExecutionResult|sql:Error {
          return self.dbClient->execute(sqlQuery);
     }
 

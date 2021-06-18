@@ -24,7 +24,7 @@ public function testExecuteOperations() returns error? {
     check beforeExample5();
 
     // Initializes the MySQL client.
-    Client mysqlClient = check new (host = host, user = user, password = password, database = "MYSQL_BBE", port =
+    Client mysqlClient = check new (host = host, user = user, password = password, database = "MYSQL_BBE_2", port =
     port, options = {serverTimezone: serverTimezone});
 
     float newCreditLimit = 15000.5;
@@ -56,10 +56,10 @@ function beforeExample5() returns sql:Error? {
 
     // Creates a database.
     sql:ExecutionResult result =
-        check mysqlClient->execute(`CREATE DATABASE MYSQL_BBE`);
+        check mysqlClient->execute(`CREATE DATABASE MYSQL_BBE_2`);
 
     //Creates a table in the database.
-    result = check mysqlClient->execute(`CREATE TABLE MYSQL_BBE.Customers
+    result = check mysqlClient->execute(`CREATE TABLE MYSQL_BBE_2.Customers
             (customerId INTEGER NOT NULL AUTO_INCREMENT, firstName  
             VARCHAR(300), lastName  VARCHAR(300), registrationID INTEGER, 
             creditLimit DOUBLE, country VARCHAR(300),
@@ -67,10 +67,10 @@ function beforeExample5() returns sql:Error? {
 
     // Inserts data into the table. The result will have the `affectedRowCount`
     // and `lastInsertedId` with the auto-generated ID of the last row.
-    result = check mysqlClient->execute(`INSERT INTO MYSQL_BBE.Customers
+    result = check mysqlClient->execute(`INSERT INTO MYSQL_BBE_2.Customers
             (firstName, lastName, registrationID,creditLimit,country) VALUES
             ('Peter','Stuart', 1, 5000.75, 'USA')`);
-    result = check mysqlClient->execute(`INSERT INTO MYSQL_BBE.Customers
+    result = check mysqlClient->execute(`INSERT INTO MYSQL_BBE_2.Customers
             (firstName, lastName, registrationID,creditLimit,country) VALUES
             ('Dan', 'Brown', 2, 10000, 'UK')`);
 
@@ -84,7 +84,7 @@ function beforeExample5() returns sql:Error? {
 function afterExample5(Client mysqlClient) returns sql:Error? {
     // Cleans the database.
     sql:ExecutionResult result =
-            check mysqlClient->execute(`DROP DATABASE MYSQL_BBE`);
+            check mysqlClient->execute(`DROP DATABASE MYSQL_BBE_2`);
     // Closes the MySQL client.
     check mysqlClient.close();
 }

@@ -31,7 +31,7 @@ public function testStoredProcedures() returns error? {
     check beforeExample3();
 
     // Initializes the MySQL client.
-    Client mysqlClient = check new (host = host, user = user, password = password, database = "MYSQL_BBE", port =
+    Client mysqlClient = check new (host = host, user = user, password = password, database = "MYSQL_BBE_4", port =
                                                       port, options = {serverTimezone: serverTimezone});
 
     // Creates a parameterized query to invoke the procedure.
@@ -85,23 +85,23 @@ function beforeExample3() returns sql:Error? {
 
     // Creates a database.
     sql:ExecutionResult result =
-        check mysqlClient->execute(`CREATE DATABASE MYSQL_BBE`);
+        check mysqlClient->execute(`CREATE DATABASE MYSQL_BBE_4`);
 
     // Creates a table in the database.
-    result = check mysqlClient->execute(`CREATE TABLE MYSQL_BBE.Student
+    result = check mysqlClient->execute(`CREATE TABLE MYSQL_BBE_4.Student
             (id INT AUTO_INCREMENT, age INT, name VARCHAR(255),
             PRIMARY KEY (id))`);
 
     // Creates the necessary stored procedures using the execute command.
     result = check mysqlClient->execute(`CREATE PROCEDURE
-        MYSQL_BBE.InsertStudent (IN pName VARCHAR(255), IN pAge INT)
+        MYSQL_BBE_4.InsertStudent (IN pName VARCHAR(255), IN pAge INT)
         BEGIN INSERT INTO Student(age, name) VALUES (pAge, pName); END`);
-    result = check mysqlClient->execute(`CREATE PROCEDURE MYSQL_BBE.GetCount
+    result = check mysqlClient->execute(`CREATE PROCEDURE MYSQL_BBE_4.GetCount
         (INOUT pID INT, OUT totalCount INT) BEGIN SELECT age INTO pID FROM
         Student WHERE id = pID; SELECT COUNT(*) INTO totalCount FROM Student;
         END`);
     result = check mysqlClient->execute(`CREATE PROCEDURE
-        MYSQL_BBE.GetStudents() BEGIN SELECT * FROM Student; END`);
+        MYSQL_BBE_4.GetStudents() BEGIN SELECT * FROM Student; END`);
 
     check mysqlClient.close();    
 }
@@ -110,7 +110,7 @@ function beforeExample3() returns sql:Error? {
 function afterExample3(Client mysqlClient) returns sql:Error? {
     // Cleans the database.
     sql:ExecutionResult result =
-            check mysqlClient->execute(`DROP DATABASE MYSQL_BBE`);
+            check mysqlClient->execute(`DROP DATABASE MYSQL_BBE_4`);
 
     // Closes the MySQL client.
     check mysqlClient.close();

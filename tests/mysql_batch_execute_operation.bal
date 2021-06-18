@@ -24,7 +24,7 @@ public function testBatchExecute() returns error? {
     check beforeExample2();
 
     // Initializes the MySQL client.
-    Client mysqlClient = check new (host = host, user = user, password = password, database = "MYSQL_BBE", port =
+    Client mysqlClient = check new (host = host, user = user, password = password, database = "MYSQL_BBE_5", port =
                                                       port, options = {serverTimezone: serverTimezone});
 
     // The records to be inserted.
@@ -74,10 +74,10 @@ function beforeExample2() returns sql:Error? {
 
     // Creates a database.
     sql:ExecutionResult result =
-        check mysqlClient->execute(`CREATE DATABASE MYSQL_BBE`);
+        check mysqlClient->execute(`CREATE DATABASE MYSQL_BBE_5`);
     
     // Creates a table in the database.
-    result = check mysqlClient->execute(`CREATE TABLE MYSQL_BBE.Customers
+    result = check mysqlClient->execute(`CREATE TABLE MYSQL_BBE_5.Customers
             (customerId INTEGER NOT NULL AUTO_INCREMENT,
             firstName VARCHAR(300), lastName  VARCHAR(300),
             registrationID INTEGER, creditLimit DOUBLE,
@@ -90,7 +90,7 @@ function beforeExample2() returns sql:Error? {
 function afterExample2(Client mysqlClient) returns sql:Error? {
     // Cleans the database.
     sql:ExecutionResult result =
-            check mysqlClient->execute(`DROP DATABASE MYSQL_BBE`);
+            check mysqlClient->execute(`DROP DATABASE MYSQL_BBE_5`);
     // Closes the MySQL client.
     check mysqlClient.close();
 }

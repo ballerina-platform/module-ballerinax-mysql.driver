@@ -24,7 +24,7 @@ public function testAtomicBatchExecute() returns error? {
     check beforeExample1();
 
     // Initializes the MySQL client.
-    Client mysqlClient = check new (host = host, user = user, password = password, database = "MYSQL_BBE", port =
+    Client mysqlClient = check new (host = host, user = user, password = password, database = "MYSQL_BBE_6", port =
                                                       port, options = {serverTimezone: serverTimezone});
 
     // Records with the duplicate `registrationID` entry. Here, it is `registrationID` = 1.
@@ -80,17 +80,17 @@ function beforeExample1() returns sql:Error? {
 
     // Creates a database.
     sql:ExecutionResult result =
-        check mysqlClient->execute(`CREATE DATABASE MYSQL_BBE`);
+        check mysqlClient->execute(`CREATE DATABASE MYSQL_BBE_6`);
 
     // Creates a table in the database.
-    result = check mysqlClient->execute(`CREATE TABLE MYSQL_BBE.Customers
+    result = check mysqlClient->execute(`CREATE TABLE MYSQL_BBE_6.Customers
             (customerId INTEGER NOT NULL AUTO_INCREMENT,
             firstName VARCHAR(300), lastName  VARCHAR(300), registrationID
             INTEGER UNIQUE, creditLimit DOUBLE, country  VARCHAR(300),
             PRIMARY KEY (customerId))`);
 
     // Adds records to the newly-created table.
-    result = check mysqlClient->execute(`INSERT INTO MYSQL_BBE.Customers
+    result = check mysqlClient->execute(`INSERT INTO MYSQL_BBE_6.Customers
             (firstName, lastName, registrationID,creditLimit,country) VALUES
              ('Peter', 'Stuart', 1, 5000.75, 'USA')`);
 
@@ -101,7 +101,7 @@ function beforeExample1() returns sql:Error? {
 function afterExample1(Client mysqlClient) returns sql:Error? {
     // Cleans the database.
     sql:ExecutionResult result =
-            check mysqlClient->execute(`DROP DATABASE MYSQL_BBE`);
+            check mysqlClient->execute(`DROP DATABASE MYSQL_BBE_6`);
     // Closes the MySQL client.
     check mysqlClient.close();
 }
