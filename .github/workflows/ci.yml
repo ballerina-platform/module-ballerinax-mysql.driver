@@ -1,6 +1,13 @@
 name: CI
 
-on: [push]
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+  pull_requests:
+    branches:
+      - main    
 
 jobs:
   build:
