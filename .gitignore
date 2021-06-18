@@ -23,10 +23,10 @@
 hs_err_pid*
 
 # Target folder of ballerina project
-*/target/*
+/target/*
 
 # resources folder
-*/resources/*
+/resources/*
 
 # idea files
 *.idea
