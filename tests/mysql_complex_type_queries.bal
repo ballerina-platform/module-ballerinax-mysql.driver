@@ -105,7 +105,7 @@ function beforeExample4() returns sql:Error? {
     sql:ExecutionResult result =
         check mysqlClient->execute(`CREATE DATABASE MYSQL_BBE`);
     
-    // Create complex data type tables in the database.
+    // Creates complex data type tables in the database.
     result = check mysqlClient->execute(`CREATE TABLE MYSQL_BBE.BINARY_TYPES
             (row_id INTEGER NOT NULL, blob_type BLOB(1024),  
             binary_type BINARY(27), PRIMARY KEY (row_id))`);

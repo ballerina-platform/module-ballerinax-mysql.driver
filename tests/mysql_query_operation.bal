@@ -56,11 +56,11 @@ public function testQueryOperation() returns error? {
         io:println("Full Customer details: ", result);
     });
 
-    // The result of the count operation is provided as a record stream.
+    // The result of the `count` operation is provided as a record stream.
     stream<record{}, error> resultStream2 =
             mysqlClient->query(`SELECT COUNT(*) AS total FROM Customers`);
 
-    // Since the above count query will return only a single row,
+    // Since the above `count` query will return only a single row,
     // the `next()` operation is sufficient to retrieve the data.
     record {|record {} value;|}|error? result = resultStream2.next();
     // Checks the result and retrieves the value for the total.

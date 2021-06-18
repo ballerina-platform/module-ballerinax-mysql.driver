@@ -27,9 +27,9 @@ public client class Client {
     #
     # + host - Hostname of the MySQL server to be connected
     # + user - If the MySQL server is secured, the username to be used to connect to the MySQL server
-    # + password - The password of provided username of the database
+    # + password - The password of the provided username of the database
     # + database - The name fo the database to be connected
-    # + port - Port number of the mysql server to be connected
+    # + port - Port number of the MySQL server to be connected
     # + options - The database-specific JDBC client properties
     # + connectionPool - The `sql:ConnectionPool` object to be used within the JDBC client.
     #                   If there is no `connectionPool` provided, the global connection pool will be used and it will
@@ -65,10 +65,10 @@ public client class Client {
          return self.dbClient->execute(sqlQuery);
     }
 
-    # Executes a batch of parameterized DDL or DML sql query provided by the user,
+    # Executes a batch of parameterized DDL or DML SQL queries provided 
     # and returns the summary of the execution.
     #
-    # + sqlQueries - The DDL or DML query such as `INSERT`, `DELETE`, `UPDATE`, etc. as an `sql:ParameterizedQuery` with an array
+    # + sqlQueries - The DDL or DML queries such as `INSERT`, `DELETE`, `UPDATE`, etc. as an `sql:ParameterizedQuery` with an array
     #                of values passed in
     # + return - Summary of the executed SQL queries as an `sql:ExecutionResult[]`, which includes details such as
     #            the `affectedRowCount` and `lastInsertId`. If one of the commands in the batch fails, this function
@@ -79,7 +79,7 @@ public client class Client {
         return self.dbClient->batchExecute(sqlQueries);
     }
 
-    # Executes a SQL stored procedure and returns the result as stream and execution summary.
+    # Executes a SQL stored procedure and returns the result as a stream with an execution summary.
     #
     # + sqlQuery - The query to execute the SQL stored procedure
     # + rowTypes - The array of `typedesc` of the records that should be returned as a result. If this is not provided,
@@ -92,7 +92,7 @@ public client class Client {
 
     # Close the SQL client.
     #
-    # + return - Possible error during closing the client
+    # + return - Possible error during the closure of the client
     public isolated function close() returns sql:Error? {
         return self.dbClient.close();
     }

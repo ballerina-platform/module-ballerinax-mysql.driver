@@ -40,7 +40,7 @@ public function testStoredProcedures() returns error? {
     sql:ParameterizedCallQuery sqlQuery =
                                 `CALL InsertStudent(${name}, ${age})`;
 
-    // Invokes the stored procedure `InsertStudent` with the `IN` parameters.
+    // Invokes the `InsertStudent` stored procedure with the `IN` parameters.
     sql:ProcedureCallResult retCall = check mysqlClient->call(sqlQuery);
     io:println("Call stored procedure `InsertStudent`." +
         "\nAffected Row count: ", retCall.executionResult?.affectedRowCount);

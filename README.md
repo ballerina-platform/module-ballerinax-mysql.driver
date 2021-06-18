@@ -1,13 +1,13 @@
 Ballerina Azure MySQL Library
 ===================
 
-The Azure MySQL library is one of the external library packages of the<a target="_blank" href="https://ballerina.io
+The Azure MySQL library is one of the external library packages of the <a target="_blank" href="https://ballerina.io
 /"> Ballerina</a> language. 
 
 This is specially designed for connecting Azure MySQL DB server and this provides the functionality required to
- access and manipulate data stored in a Azure MySQL database.
+ access and manipulate the data stored in an Azure MySQL database.
  
-Following are the operations supported by this connector.
+The operations below are supported by this connector.
  
  - Pooling connections
  - Querying data
@@ -33,7 +33,7 @@ Following are the operations supported by this connector.
  
  ## Building the Source
  
- Execute the commands below to build from the source after installing Ballerina SL Alpha 5 version.
+ Execute the commands below to build from the source after installing Ballerina Swan Lake Alpha 5 version.
  
  1. To build the library:
  ```shell script

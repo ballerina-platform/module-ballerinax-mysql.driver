@@ -27,7 +27,7 @@ public function testAtomicBatchExecute() returns error? {
     Client mysqlClient = check new (host = host, user = user, password = password, database = "MYSQL_BBE", port =
                                                       port, options = {serverTimezone: serverTimezone});
 
-    // Records with the duplicate `registrationID` entry. Here it is `registrationID` = 1.
+    // Records with the duplicate `registrationID` entry. Here, it is `registrationID` = 1.
     var insertRecords = [
         {firstName: "Linda", lastName: "Jones", registrationID: 4,
                                     creditLimit: 10000.75, country: "USA"},

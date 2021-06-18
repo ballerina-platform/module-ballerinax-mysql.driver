@@ -37,7 +37,7 @@ public function testBatchExecute() returns error? {
                                     creditLimit: 3000.25, country: "USA"}
     ];
 
-    // Creates a batch parameterized query.
+    // Creates a batch-parameterized query.
     sql:ParameterizedQuery[] insertQueries =
         from var data in insertRecords
             select  `INSERT INTO Customers
