@@ -21,3 +21,25 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+
+# Target folder of ballerina project
+/target/*
+
+# resources folder
+/resources/*
+
+# idea files
+*.idea
+*.iml
+
+# .ballerina files
+*.ballerina
+
+# Ignore Gradle project-specific cache directory
+.gradle
+
+# Ignore Gradle build output directory
+build
+
+#
+*.log
