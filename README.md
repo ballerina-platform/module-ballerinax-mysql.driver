@@ -53,6 +53,5 @@ The operations below are supported by this connector.
  All contributors are encouraged to read the [Ballerina Code of Conduct](https://ballerina.io/code-of-conduct).
  
  # Useful Links
- * Discuss about code changes of the Ballerina project in [ballerina-dev@googlegroups.com](mailto:ballerina-dev@googlegroups.com).
  * Chat live with us via our [Slack channel](https://ballerina.io/community/slack/).
  * Post all technical questions on Stack Overflow with the [#ballerina](https://stackoverflow.com/questions/tagged/ballerina) tag.

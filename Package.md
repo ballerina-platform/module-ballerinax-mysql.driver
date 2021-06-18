@@ -25,13 +25,10 @@ The `dbClient2` receives the host, username, and password. Since the properties 
 in the `jdbc:Client`, you can pass them without named params.
 
 The `dbClient3` uses the named params to pass the attributes since it is skipping some params in the constructor. 
-Further, the [`mysql:Options`](https://ballerina.io/learn/api-docs/ballerina/#/mysql/records/Options) 
-property is passed to configure the SSL and connection timeouts in the MySQL client. 
+Further, the `mysql:Options` property is passed to configure the SSL and connection timeouts in the MySQL client. 
 
 Similarly, the `dbClient4` uses the named params and it provides an unshared connection pool in the type of 
-[`sql:ConnectionPool`](https://ballerina.io/learn/api-docs/ballerina/#/sql/records/ConnectionPool) 
-to be used within the client. 
-For more details about connection pooling, see the [`sql` package](https://ballerina.io/learn/api-docs/ballerina/#/sql).
+`sql:ConnectionPool` to be used within the client.
 
 ```ballerina
 mysql:Client|sql:Error dbClient1 = new ();
@@ -49,14 +46,9 @@ mysql:Client|sql:Error dbClient3 = new (user = "rootUser", password = "rootPass"
 mysql:Client|sql:Error dbClient4 = new (user = "rootUser", password = "rootPass",
                               connectionPool = {maxOpenConnections: 5});
 ```
-You can find more details about each property in the
-[`mysql:Client`](https://ballerina.io/learn/api-docs/ballerina/#/mysql/clients/Client) constructor. 
+You can find more details about each property in the `mysql:Client` constructor. 
 
-The [`mysql:Client`](https://ballerina.io/learn/api-docs/ballerina/#/mysql/clients/Client) references 
-[sql:Client](https://ballerina.io/learn/api-docs/ballerina/#/sql/abstractObjects/Client) and all the operations 
-defined by the `sql:Client` will be supported by the `mysql:Client` as well. 
-
-For more information on all the operations supported by the `mysql:Client`, which include the below, see[]().
+The `mysql:Client` references sql:Client and all the operations defined by the `sql:Client` will be supported by the `mysql:Client` as well.
 
 1. Connection Pooling
 2. Querying data
