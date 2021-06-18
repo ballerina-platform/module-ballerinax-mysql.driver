@@ -25,7 +25,9 @@ type Student record {
     string name;
 };
 
-@test:Config {enable:true}
+// temporary disabling the test because azure db credentials are not configured as git secrets.
+// enable it once we add credentials
+@test:Config {enable:false}
 public function testStoredProcedures() returns error? {
     // Runs the prerequisite setup for the example.
     check beforeExample3();
