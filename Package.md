@@ -16,39 +16,42 @@ To access a database, you must first create a `mysql:Client` object.
 The examples for creating a MySQL client can be found below.
 
 #### Creating a client
-This example shows different ways of creating the `mysql:Client`. 
+This example shows different ways of creating the Azure MySQL client. 
 
-The client can be created with an empty constructor and hence, the client will be initialized with the default properties. 
-The first example with the `dbClient1` demonstrates this.
+The `dbClient` receives the host, username, and password. Since the properties are passed in the same order as they are
+ defined in the Azure MySQL Client, you can pass them without named params.
+ 
+```ballerina
+import ballerinax/azure.mysql
+ 
+mysql:Client|sql:Error dbClient = new ("foo.mysql.database.azure.com", "admin@foo", "password", 
+                              "information_schema", 3306);
+```
 
-The `dbClient2` receives the host, username, and password. Since the properties are passed in the same order as defined 
-in the `jdbc:Client`, you can pass them without named params.
+The `dbClient` uses the named params to pass the attributes since it is skipping some params in the constructor. 
+Further, the `mysql:Options` property is passed to configure server time zone in the Azure MySQL client. Normally
+ server time zone is required when connecting to the Azure MySQL DB server.
 
-The `dbClient3` uses the named params to pass the attributes since it is skipping some params in the constructor. 
-Further, the `mysql:Options` property is passed to configure the SSL and connection timeouts in the MySQL client. 
+```ballerina
+import ballerinax/azure.mysql
 
-Similarly, the `dbClient4` uses the named params and it provides an unshared connection pool in the type of 
+mysql:Client|sql:Error dbClient = new (host = "foo.mysql.database.azure.com", user = "admin@foo", password = "password",
+                              options = {serverTimezone: "UTC"});
+```
+
+Similarly, the `dbClient` uses the named params and it provides an unshared connection pool in the type of 
 `sql:ConnectionPool` to be used within the client.
 
 ```ballerina
-mysql:Client|sql:Error dbClient1 = new ();
-mysql:Client|sql:Error dbClient2 = new ("localhost", "rootUser", "rooPass", 
-                              "information_schema", 3306);
-                              
-mysql:Options mysqlOptions = {
-  ssl: {
-    mode: mysql:SSL_PREFERRED
-  },
-  connectTimeout: 10
-};
-mysql:Client|sql:Error dbClient3 = new (user = "rootUser", password = "rootPass",
-                              options = mysqlOptions);
-mysql:Client|sql:Error dbClient4 = new (user = "rootUser", password = "rootPass",
+import ballerinax/azure.mysql
+
+mysql:Client|sql:Error dbClient = new (host = "foo.mysql.database.azure.com", user = "admin@foo", password = "password",
                               connectionPool = {maxOpenConnections: 5});
 ```
 You can find more details about each property in the `mysql:Client` constructor. 
 
-The `mysql:Client` references sql:Client and all the operations defined by the `sql:Client` will be supported by the `mysql:Client` as well.
+The Azure MySQL client references `mysql:Client` and all the operations defined by the `mysql:Client` will be supported
+ by the Azure MySQL client as well.
 
 1. Connection Pooling
 2. Querying data
