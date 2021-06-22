@@ -50,7 +50,7 @@ mysql:Client|sql:Error dbClient = new (host = "foo.mysql.database.azure.com", us
 ```
 You can find more details about each property in the `mysql:Client` constructor. 
 
-The Azure MySQL client references `mysql:Client` and all the operations defined by the `mysql:Client` will be supported
+The `mysql:Client` references and all the operations defined by it will be supported
  by the Azure MySQL client as well.
 
 1. Connection Pooling
