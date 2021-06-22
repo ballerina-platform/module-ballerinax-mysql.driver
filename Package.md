@@ -29,7 +29,7 @@ mysql:Client|sql:Error dbClient = new ("foo.mysql.database.azure.com", "admin@fo
 ```
 
 The `dbClient` uses the named params to pass the attributes since it is skipping some params in the constructor. 
-Further, the `mysql:Options` property is passed to configure server time zone in the Azure MySQL client. Normally
+Further, the `mysql:Options` property is passed to configure the server time zone in the Azure MySQL client. Normally, the
  server time zone is required when connecting to the Azure MySQL DB server.
 
 ```ballerina
