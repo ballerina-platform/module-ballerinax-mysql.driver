@@ -1,5 +1,7 @@
 ## Package overview
 
+**This package is depreciated in favour of [mysql.driver](https://central.ballerina.io/ballerinax/mysql.driver)**
+
 This Package provides the functionality required to access and manipulate data stored in a Azure MySQL database.
 
 **Note:** The MySQL driver JAR is included in this connector. Therefore, you don't need to add the MySQL driver JAR dependency to
