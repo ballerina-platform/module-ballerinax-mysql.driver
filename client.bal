@@ -18,5 +18,4 @@ import ballerina/jballerina.java as _;
 import ballerinax/mysql;
 
 // Represents the Azure MySQL Client
-@deprecated
 public type Client mysql:Client;
