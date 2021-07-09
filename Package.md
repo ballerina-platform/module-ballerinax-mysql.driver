@@ -5,7 +5,7 @@ This Package bundles the latest MySQL driver so that mysql connector can be used
 ## Compatibility
 
 Ballerina Language Version   **Swan Lake Alpha 5**  
-MySQL Driver Version         **8.0.20**
+MySQL Driver Version         **8.0.25**
 
 ## Usage
 
