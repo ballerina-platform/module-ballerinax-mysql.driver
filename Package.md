@@ -1,6 +1,6 @@
 ## Package overview
 
-**This package is depreciated in favour of [mysql.driver](https://central.ballerina.io/ballerinax/mysql.driver)**
+**This package is deprecated in favour of the [`mysql.driver`](https://central.ballerina.io/ballerinax/mysql.driver)**
 
 This Package provides the functionality required to access and manipulate data stored in a Azure MySQL database.
 
