@@ -1,10 +1,10 @@
 [package]
 org="ballerinax"
-name="azure.mysql"
-version="0.1.1"
+name="mysql.driver"
+version="1.0.0"
 authors=["Ballerina"]
 keywords=["Azure", "MySQL"]
-repository="https://github.com/ballerina-platform/module-ballerinax-azure.mysql"
+repository="https://github.com/ballerina-platform/module-ballerinax-mysql.driver"
 license=["Apache-2.0"]
 
 [[platform.java11.dependency]]
