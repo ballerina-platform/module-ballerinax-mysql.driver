@@ -14,8 +14,3 @@
 // specific language governing permissions and limitations
 // under the License.
 
-import ballerina/jballerina.java as _;
-import ballerinax/mysql;
-
-// Represents the Azure MySQL Client
-public type Client mysql:Client;
