@@ -1,22 +1,10 @@
-Ballerina Azure MySQL Library
+Ballerina MySQL Driver Library
 ===================
 
-The Azure MySQL library is one of the external library packages of the <a target="_blank" href="https://ballerina.io
+The MySQL Driver library is one of the external library packages of the <a target="_blank" href="https://ballerina.io
 /"> Ballerina</a> language. 
 
-This is specially designed for connecting Azure MySQL DB server and this provides the functionality required to
- access and manipulate the data stored in an Azure MySQL database.
- 
-The operations below are supported by this connector.
- 
- - Pooling connections
- - Querying data
- - Inserting data
- - Updating data
- - Deleting data
- - Updating data in batches
- - Executing stored procedures
- - Closing the client
+This Package bundles the latest MySQL driver so that mysql connector can be used in ballerina projects easily.
  
  # Building from the Source
  ## Setting Up the Prerequisites
