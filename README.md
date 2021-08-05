@@ -21,7 +21,7 @@ This Package bundles the latest MySQL driver so that mysql connector can be used
  
  ## Building the Source
  
- Execute the commands below to build from the source after installing Ballerina Swan Lake Alpha 5 version.
+ Execute the commands below to build from the source after installing Ballerina Swan Lake Beta 1 version.
  
  1. To build the library:
  ```shell script
