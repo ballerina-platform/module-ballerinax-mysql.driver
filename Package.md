@@ -10,6 +10,7 @@ This Package bundles the latest MySQL driver so that mysql connector can be used
 |MySQL Driver* | **8.0.25** |
 
 > *MySQL Connector/J 8.0 is released under GPLv2 License.
+
 ## Usage
 
 To add the MySQL driver dependency the project simply import the module as below,
