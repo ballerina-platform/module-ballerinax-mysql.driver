@@ -4,9 +4,12 @@ This Package bundles the latest MySQL driver so that mysql connector can be used
 
 ## Compatibility
 
-Ballerina Language Version   **Swan Lake Alpha 5**  
-MySQL Driver Version         **8.0.25**
+| | Version |
+|:---|:---:|
+|Ballerina Language | **Swan Lake Alpha 5** |
+|MySQL Driver* | **8.0.25** |
 
+> *MySQL Connector/J 8.0 is released under GPLv2 License.
 ## Usage
 
 To add the MySQL driver dependency the project simply import the module as below,
@@ -16,3 +19,7 @@ import ballerina/sql;
 import ballerinax/mysql;
 import ballerinax/mysql.driver as _;
 ```
+
+# Useful Links
+* Chat live with us via our [Slack channel](https://ballerina.io/community/slack/).
+* Post all technical questions on Stack Overflow with the [#ballerina](https://stackoverflow.com/questions/tagged/ballerina) tag.
