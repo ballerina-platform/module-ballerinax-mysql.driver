@@ -11,6 +11,3 @@ license=["Apache-2.0"]
 groupId = "mysql"
 artifactId = "mysql-connector-java"
 version = "8.0.25"
-
-[build-options]
-observabilityIncluded = true
