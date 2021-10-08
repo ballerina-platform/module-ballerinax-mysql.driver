@@ -37,14 +37,14 @@ public function testQueryOperation() returns error? {
     mysql:Client mysqlClient = check new (host = host, user = user,
             password = password, database = "MYSQL_BBE_1", port = port, options = {serverTimezone: serverTimezone});
 
-    stream<record{}, error> resultStream =
+    stream<record{}, error?> resultStream =
              mysqlClient->query(`SELECT * FROM Customers`);
 
     error? e = resultStream.forEach(function(record {} result) {
         io:println("Full Customer details: ", result);
     });
 
-    stream<record{}, error> resultStream2 =
+    stream<record{}, error?> resultStream2 =
             mysqlClient->query(`SELECT COUNT(*) AS total FROM Customers`);
 
     record {|record {} value;|}|error? result = resultStream2.next();
@@ -54,11 +54,8 @@ public function testQueryOperation() returns error? {
 
     error? er = resultStream.close();
 
-    stream<record{}, error> resultStream3 =
+    stream<Customer, sql:Error?> customerStream =
         mysqlClient->query(`SELECT * FROM Customers`, Customer);
-
-    stream<Customer, sql:Error> customerStream =
-        <stream<Customer, sql:Error>>resultStream3;
 
     error? e2 = customerStream.forEach(function(Customer customer) {
         io:println("Full Customer details: ", customer);
