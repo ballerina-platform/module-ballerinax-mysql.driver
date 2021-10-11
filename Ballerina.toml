@@ -1,16 +1,14 @@
 [package]
 org="ballerinax"
 name="mysql.driver"
-version="1.1.1"
+version="1.2.0"
 authors=["Ballerina"]
 keywords=["Azure", "MySQL"]
 repository="https://github.com/ballerina-platform/module-ballerinax-mysql.driver"
 license=["Apache-2.0"]
+distribution = "slbeta3"
 
 [[platform.java11.dependency]]
 groupId = "mysql"
 artifactId = "mysql-connector-java"
-version = "8.0.25"
-
-[build-options]
-observabilityIncluded = true
+version = "8.0.26"
