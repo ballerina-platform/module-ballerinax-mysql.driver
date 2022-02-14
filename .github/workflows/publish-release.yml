@@ -1,0 +1,40 @@
+name: Publish release
+
+on:
+  workflow_dispatch:
+
+jobs:
+  publish-release:
+    runs-on: ubuntu-latest
+    #if: github.repository_owner == 'ballerina-platform'
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Ballerina Build
+        uses: ballerina-platform/ballerina-action/@master
+        with:
+          args:
+            build
+
+      - name: Ballerina Pack
+        uses: ballerina-platform/ballerina-action/@master
+        with:
+          args:
+            pack
+
+      - name: Ballerina Push
+        uses: ballerina-platform/ballerina-action/@master
+        with:
+          args:
+            push
+        env:
+          BALLERINA_CENTRAL_ACCESS_TOKEN: ${{ secrets.BALLERINA_CENTRAL_ACCESS_TOKEN }}
+
+      - name: Set version env variable
+        run: echo "VERSION=$(grep -m1 'version' < Ballerina.toml | cut -f2 -d \")"
+
+      - name: GitHub Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.BALLERINA_BOT_TOKEN }}
+        run: |
+          gh release create v$VERSION --title "module-ballerinax-mysql.driver-v$VERSION"
