@@ -40,7 +40,7 @@ public function testQueryOperation() returns error? {
     stream<record{}, error?> resultStream =
              mysqlClient->query(`SELECT * FROM Customers`);
 
-    error? e = resultStream.forEach(function(record {} result) {
+    check resultStream.forEach(function(record {} result) {
         io:println("Full Customer details: ", result);
     });
 
@@ -52,12 +52,12 @@ public function testQueryOperation() returns error? {
         io:println("Total rows in customer table : ", result.value["total"]);
     }
 
-    error? er = resultStream.close();
+    check resultStream.close();
 
     stream<Customer, sql:Error?> customerStream =
         mysqlClient->query(`SELECT * FROM Customers`, Customer);
 
-    error? e2 = customerStream.forEach(function(Customer customer) {
+    check customerStream.forEach(function(Customer customer) {
         io:println("Full Customer details: ", customer);
     });
 
@@ -67,19 +67,23 @@ public function testQueryOperation() returns error? {
 function beforeExample6() returns sql:Error? {
     mysql:Client mysqlClient = check new (host = host, user = user, password = password, options = {serverTimezone: serverTimezone});
 
-    sql:ExecutionResult result =
-        check mysqlClient->execute(`CREATE DATABASE MYSQL_BBE_1`);
+    _ = check mysqlClient->execute(`CREATE DATABASE MYSQL_BBE_1`);
 
-    result = check mysqlClient->execute(`CREATE TABLE MYSQL_BBE_1.Customers
-            (customerId INTEGER NOT NULL AUTO_INCREMENT, firstName
-            VARCHAR(300), lastName  VARCHAR(300), registrationID INTEGER,
-            creditLimit DOUBLE, country  VARCHAR(300),
-            PRIMARY KEY (customerId))`);
+    _ = check mysqlClient->execute(`
+        CREATE TABLE MYSQL_BBE_1.Customers(
+            customerId INTEGER NOT NULL AUTO_INCREMENT,
+            firstName   VARCHAR(300),
+            lastName  VARCHAR(300),
+            registrationID INTEGER,
+            creditLimit DOUBLE,
+            country VARCHAR(300),
+            PRIMARY KEY (customerId))
+        `);
 
-    result = check mysqlClient->execute(`INSERT INTO MYSQL_BBE_1.Customers
+    _ = check mysqlClient->execute(`INSERT INTO MYSQL_BBE_1.Customers
             (firstName, lastName, registrationID,creditLimit,country) VALUES
             ('Peter','Stuart', 1, 5000.75, 'USA')`);
-    result = check mysqlClient->execute(`INSERT INTO MYSQL_BBE_1.Customers
+    _= check mysqlClient->execute(`INSERT INTO MYSQL_BBE_1.Customers
             (firstName, lastName, registrationID,creditLimit,country) VALUES
             ('Dan', 'Brown', 2, 10000, 'UK')`);
 
@@ -87,7 +91,6 @@ function beforeExample6() returns sql:Error? {
 }
 
 function afterExample6(mysql:Client mysqlClient) returns sql:Error? {
-    sql:ExecutionResult result =
-            check mysqlClient->execute(`DROP DATABASE MYSQL_BBE_1`);
+    _ = check mysqlClient->execute(`DROP DATABASE MYSQL_BBE_1`);
     check mysqlClient.close();
 }
