@@ -115,7 +115,7 @@ modules = [
 ]
 
 [[package]]
-org = "kaneeltest2"
+org = "ballerinax"
 name = "mysql.driver"
 version = "1.2.0"
 dependencies = [
@@ -126,7 +126,7 @@ dependencies = [
 	{org = "ballerinax", name = "mysql"}
 ]
 modules = [
-	{org = "kaneeltest2", packageName = "mysql.driver", moduleName = "mysql.driver"}
+	{org = "ballerinax", packageName = "mysql.driver", moduleName = "mysql.driver"}
 ]
 
 
