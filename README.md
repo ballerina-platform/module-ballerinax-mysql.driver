@@ -9,31 +9,31 @@ This Package bundles the latest MySQL driver so that mysql connector can be used
  # Building from the Source
  ## Setting Up the Prerequisites
  
- 1. Download and install Java SE Development Kit (JDK) version 11 (from one of the following locations).
+1. Download and install Java SE Development Kit (JDK) version 11 (from one of the following locations).
  
-    * [Oracle](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html)
+   * [Oracle](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html)
  
-    * [OpenJDK](https://adoptopenjdk.net/)
+   * [OpenJDK](https://adoptopenjdk.net/)
  
-         > **Note:** Set the JAVA_HOME environment variable to the path name of the directory into which you installed JDK.
+        > **Note:** Set the JAVA_HOME environment variable to the path name of the directory into which you installed JDK.
  
- 2. Download and install [Ballerina 2201.0.0](https://ballerina.io/). 
+2. Download and install [Ballerina 2201.0.0](https://ballerina.io/). 
  
  ## Building the Source
  
- Execute the commands below to build from the source after installing Ballerina version 2201.0.0.
+Execute the commands below to build from the source after installing Ballerina version 2201.0.0.
 ```shell script
   bal build
 ```
 
- # Contributing to Ballerina
- As an open source project, Ballerina welcomes contributions from the community. 
+# Contributing to Ballerina
+As an open source project, Ballerina welcomes contributions from the community. 
  
- For more information, go to the [contribution guidelines](https://github.com/ballerina-platform/ballerina-lang/blob/main/CONTRIBUTING.md).
+For more information, go to the [contribution guidelines](https://github.com/ballerina-platform/ballerina-lang/blob/main/CONTRIBUTING.md).
  
- # Code of Conduct
- All contributors are encouraged to read the [Ballerina Code of Conduct](https://ballerina.io/code-of-conduct).
+# Code of Conduct
+All contributors are encouraged to read the [Ballerina Code of Conduct](https://ballerina.io/code-of-conduct).
  
- # Useful Links
- * Chat live with us via our [Slack channel](https://ballerina.io/community/slack/).
- * Post all technical questions on Stack Overflow with the [#ballerina](https://stackoverflow.com/questions/tagged/ballerina) tag.
+# Useful Links
+* Chat live with us via our [Slack channel](https://ballerina.io/community/slack/).
+* Post all technical questions on Stack Overflow with the [#ballerina](https://stackoverflow.com/questions/tagged/ballerina) tag.
