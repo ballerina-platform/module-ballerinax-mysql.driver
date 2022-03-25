@@ -21,7 +21,7 @@ This Package bundles the latest MySQL driver so that mysql connector can be used
  
  ## Building the Source
  
-Execute the commands below to build from the source after installing Ballerina version 2201.0.0.
+Execute the command below to build from the source after installing Ballerina version 2201.0.0.
 ```shell script
   bal build
 ```
