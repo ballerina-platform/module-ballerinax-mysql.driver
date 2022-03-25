@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
   pull_request:
     branches:
-      - main    
+      - main
 
 jobs:
   build:
@@ -17,11 +17,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Ballerina Build
-        uses: ballerina-platform/ballerina-action/@slbeta3
+        uses: ballerina-platform/ballerina-action/@2201.0.0
         with:
           args:
-            build -c
-        env:
-          DB_HOST: ${{ secrets.DB_HOST }}
-          DB_USER: ${{ secrets.DB_USER }}
-          DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+            build

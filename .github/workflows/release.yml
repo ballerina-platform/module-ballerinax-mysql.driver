@@ -11,17 +11,15 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+
       - name: Ballerina Build
-        uses: ballerina-platform/ballerina-action/@slbeta3
+        uses: ballerina-platform/ballerina-action/@2201.0.0
         with:
           args:
-            build -c --skip-tests
-        env:
-          DB_HOST: ${{ secrets.DB_HOST }}
-          DB_USER: ${{ secrets.DB_USER }}
-          DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+            pack
+
       - name: Ballerina Push
-        uses: ballerina-platform/ballerina-action/@slbeta3
+        uses: ballerina-platform/ballerina-action/@2201.0.0
         with:
           args:
             push
