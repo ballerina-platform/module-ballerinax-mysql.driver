@@ -17,21 +17,15 @@ This Package bundles the latest MySQL driver so that mysql connector can be used
  
          > **Note:** Set the JAVA_HOME environment variable to the path name of the directory into which you installed JDK.
  
- 2. Download and install [Ballerina SL Beta 3](https://ballerina.io/). 
+ 2. Download and install [Ballerina 2201.0.0](https://ballerina.io/). 
  
  ## Building the Source
  
- Execute the commands below to build from the source after installing Ballerina Swan Lake Beta 3 version.
- 
- 1. To build the library:
- ```shell script
-     bal build
- ```
- 
- 2. To build the module without the tests:
- ```shell script
-     bal build --skip-tests
- ```
+ Execute the commands below to build from the source after installing Ballerina version 2201.0.0.
+```shell script
+  bal build
+```
+
  # Contributing to Ballerina
  As an open source project, Ballerina welcomes contributions from the community. 
  
