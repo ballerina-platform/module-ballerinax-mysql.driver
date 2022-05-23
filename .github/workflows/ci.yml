@@ -8,6 +8,9 @@ on:
   pull_request:
     branches:
       - main
+  repository_dispatch:
+    types:
+      check_connector_for_breaking_changes
 
 jobs:
   build:
@@ -21,3 +24,18 @@ jobs:
         with:
           args:
             build
+      
+      - name: Allert notifier on failure
+        if: failure() && (github.event.action == 'check_connector_for_breaking_changes')
+        run: |
+          curl -X POST \
+          'https://api.github.com/repos/ballerina-platform/ballerina-release/dispatches' \
+          --header 'Accept: application/vnd.github.v3+json' \
+          --header 'Authorization: Bearer ${{ secrets.BALLERINA_BOT_TOKEN }}' \
+          --data-raw '{
+            "event_type": "notify-ballerinax-connector-build-failure",
+            "client_payload": {
+              "repoName": "module-ballerinax-mysql.driver",
+              "workflow": "CI"
+            }
+          }'
