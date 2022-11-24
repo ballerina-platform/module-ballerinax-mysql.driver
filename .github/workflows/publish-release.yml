@@ -1,3 +1,5 @@
+# Test cases are disabled in this driver. It is recommended to test the driver with Staging Central and Dev Central
+# before publishing to Ballerina Central.
 name: Publish release
 
 on:
@@ -42,12 +44,6 @@ jobs:
         run: |
           echo "Version: ${VERSION}"
           git checkout -b release-${VERSION}
-          sed -i 's/ballerinaLangVersion=\(.*\)-SNAPSHOT/ballerinaLangVersion=\1/g' gradle.properties
-          sed -i 's/ballerinaLangVersion=\(.*\)-[0-9]\{8\}-[0-9]\{6\}-.*$/ballerinaLangVersion=\1/g' gradle.properties
-          sed -i 's/stdlib\(.*\)=\(.*\)-SNAPSHOT/stdlib\1=\2/g' gradle.properties
-          sed -i 's/stdlib\(.*\)=\(.*\)-[0-9]\{8\}-[0-9]\{6\}-.*$/stdlib\1=\2/g' gradle.properties
-          sed -i 's/observe\(.*\)=\(.*\)-SNAPSHOT/observe\1=\2/g' gradle.properties
-          sed -i 's/observe\(.*\)=\(.*\)-[0-9]\{8\}-[0-9]\{6\}-.*$/observe\1=\2/g' gradle.properties
           git add gradle.properties
           git commit -m "Move dependencies to stable version" || echo "No changes to commit"
       - name: Grant execute permission for gradlew
