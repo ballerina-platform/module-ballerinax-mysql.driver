@@ -20,7 +20,3 @@ import ballerina/sql;
 import ballerinax/mysql;
 import ballerinax/mysql.driver as _;
 ```
-
-# Useful Links
-* Chat live with us via our [Slack channel](https://ballerina.io/community/slack/).
-* Post all technical questions on Stack Overflow with the [#ballerina](https://stackoverflow.com/questions/tagged/ballerina) tag.
