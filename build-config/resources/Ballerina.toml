@@ -1,0 +1,18 @@
+[package]
+org="ballerinax"
+name="mysql.driver"
+version = "@toml.version@"
+authors=["Ballerina"]
+keywords=["Azure", "MySQL"]
+repository="https://github.com/ballerina-platform/module-ballerinax-mysql.driver"
+license=["Apache-2.0"]
+distribution = "2201.0.0"
+
+[[platform.java11.dependency]]
+path = "./lib/mysql-connector-java-@mysql.driver.version@.jar"
+
+[[platform.java11.dependency]]
+groupId = "io.ballerina.stdlib"
+artifactId = "mysql.driver-native"
+version = "@toml.version@"
+path = "../native/build/libs/mysql.driver-native-@project.version@.jar"
