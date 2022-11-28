@@ -73,7 +73,7 @@ subprojects {
     }
 
     dependencies {
-        externalJars (group: 'mysql', name: 'mysql-connector-java', version: "${mySQLDriverVersion}") {
+        externalJars (group: 'com.mysql', name: 'mysql-connector-j', version: "${mySQLDriverVersion}") {
             transitive = false
         }
     }
