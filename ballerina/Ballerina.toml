@@ -9,7 +9,7 @@ license = ["Apache-2.0"]
 distribution = "2201.0.0"
 
 [[platform.java11.dependency]]
-path = "./lib/mysql-connector-java-8.0.29.jar"
+path = "./lib/mysql-connector-j-8.0.31.jar"
 
 [[platform.java11.dependency]]
 groupId = "io.ballerina.stdlib"
