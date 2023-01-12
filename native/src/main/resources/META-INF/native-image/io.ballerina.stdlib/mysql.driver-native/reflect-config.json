@@ -225,5 +225,30 @@
         ]
       }
     ]
+  },
+  {
+    "name":"com.mysql.cj.jdbc.MysqlXADataSource",
+    "queryAllPublicMethods":true,
+    "methods":[
+      {
+        "name":"<init>",
+        "parameterTypes":[]
+      }
+    ]
+  },
+  {
+    "name":"java.sql.BatchUpdateException",
+    "methods":[
+      {
+        "name":"<init>",
+        "parameterTypes":[
+          "java.lang.String",
+          "java.lang.String",
+          "int",
+          "long[]",
+          "java.lang.Throwable"
+        ]
+      }
+    ]
   }
 ]
