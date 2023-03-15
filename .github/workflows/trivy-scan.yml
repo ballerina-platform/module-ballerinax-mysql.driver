@@ -31,3 +31,17 @@ jobs:
           format: 'table'
           timeout: '10m0s'
           exit-code: '1'
+      - name: Notify failure
+        if: ${{ failure() }}
+        run: |
+          curl -X POST \
+          'https://api.github.com/repos/ballerina-platform/ballerina-release/dispatches' \
+          -H 'Accept: application/vnd.github.v3+json' \
+          -H 'Authorization: Bearer ${{ secrets.BALLERINA_BOT_TOKEN }}' \
+          --data "{
+            \"event_type\": \notify-trivy-failure\",
+            \"client_payload\": {
+              \"repoName\": \"module-ballerinax-mysql.driver\",
+              \"workflow\": \"Trivy\"
+            }
+          }"
