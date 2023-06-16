@@ -6,7 +6,10 @@ authors = ["Ballerina"]
 keywords = ["Azure", "MySQL"]
 repository = "https://github.com/ballerina-platform/module-ballerinax-mysql.driver"
 license = ["Apache-2.0"]
-distribution = "2201.3.0"
+distribution = "2201.7.0"
+
+[platform.java11]
+graalvmCompatible = true
 
 [[platform.java11.dependency]]
 path = "./lib/mysql-connector-j-@mysql.driver.version@.jar"
