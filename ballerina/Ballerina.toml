@@ -1,12 +1,12 @@
 [package]
 org = "ballerinax"
 name = "mysql.driver"
-version = "1.5.0"
+version = "1.6.0"
 authors = ["Ballerina"]
 keywords = ["Azure", "MySQL"]
 repository = "https://github.com/ballerina-platform/module-ballerinax-mysql.driver"
 license = ["Apache-2.0"]
-distribution = "2201.7.0"
+distribution = "2201.8.0"
 
 [platform.java17]
 graalvmCompatible = true
@@ -17,5 +17,5 @@ path = "./lib/mysql-connector-j-8.0.31.jar"
 [[platform.java17.dependency]]
 groupId = "io.ballerina.stdlib"
 artifactId = "mysql.driver-native"
-version = "1.5.0"
-path = "../native/build/libs/mysql.driver-native-1.5.0.jar"
+version = "1.6.0"
+path = "../native/build/libs/mysql.driver-native-1.6.0-SNAPSHOT.jar"
