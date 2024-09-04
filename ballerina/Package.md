@@ -6,8 +6,8 @@ This Package bundles the latest MySQL driver so that mysql connector can be used
 
 | |   Version    |
 |:---|:------------:|
-|Ballerina Language | **2201.7.0** |
-|MySQL Driver* |  **8.0.31**  |
+|Ballerina Language | **2201.8.0** |
+|MySQL Driver* |  **8.2.0**   |
 
 > *MySQL Connector/J 8.0 is released under GPLv2 License.
 
