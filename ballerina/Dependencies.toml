@@ -5,12 +5,12 @@
 
 [ballerina]
 dependencies-toml-version = "2"
-distribution-version = "2201.8.0"
+distribution-version = "2201.10.0-20241025-103700-5c9e6a27"
 
 [[package]]
 org = "ballerinax"
 name = "mysql.driver"
-version = "1.7.0"
+version = "1.7.1"
 modules = [
 	{org = "ballerinax", packageName = "mysql.driver", moduleName = "mysql.driver"}
 ]

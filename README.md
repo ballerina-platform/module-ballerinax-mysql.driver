@@ -10,8 +10,8 @@ This Package bundles the latest MySQL driver so that mysql connector can be used
 
 ### Set up the prerequisites
 
-1. Download and install Java SE Development Kit (JDK) version 17 (from one of the following locations).
-    * [Oracle](https://www.oracle.com/java/technologies/downloads/#java17)
+1. Download and install Java SE Development Kit (JDK) version 21 (from one of the following locations).
+    * [Oracle](https://www.oracle.com/java/technologies/downloads/#java21)
     * [OpenJDK](https://adoptium.net/)
 
 2.  Export your GitHub personal access token with read package permissions as follows.
