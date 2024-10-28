@@ -37,7 +37,7 @@ jobs:
         run: |
           ./gradlew publish --scan --no-daemon
       - name: Upload Artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: ballerina-runtime
           path: target/ballerina-runtime/
