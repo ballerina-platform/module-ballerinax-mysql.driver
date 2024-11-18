@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-      - java21
     paths-ignore:
       - '*.md'
   workflow_dispatch:
