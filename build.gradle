@@ -70,9 +70,13 @@ subprojects {
 
     configurations {
         externalJars
+        jbalTools
     }
 
     dependencies {
+        jbalTools ("org.ballerinalang:jballerina-tools:${ballerinaLangVersion}") {
+            transitive = false
+        }
         externalJars (group: 'com.mysql', name: 'mysql-connector-j', version: "${mySQLDriverVersion}") {
             transitive = false
         }
