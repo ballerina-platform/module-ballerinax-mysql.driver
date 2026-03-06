@@ -5,6 +5,7 @@ version = "1.8.1"
 authors = ["Ballerina"]
 keywords = ["Azure", "MySQL", "Vendor/Oracle", "Area/Database", "Type/Driver"]
 repository = "https://github.com/ballerina-platform/module-ballerinax-mysql.driver"
+icon = "icon.png"
 license = ["Apache-2.0"]
 distribution = "2201.11.0"
 
