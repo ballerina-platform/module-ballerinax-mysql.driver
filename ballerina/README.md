@@ -11,10 +11,6 @@ The MySQL driver provides a reliable and high-performance connectivity to MySQL 
 - Secure communication with TLS and authentication
 - GraalVM compatible for native image builds
 
-## Package overview
-
-This Package bundles the latest MySQL driver so that mysql connector can be used in ballerina projects easily.
-
 ## Compatibility
 
 | |   Version    |
