@@ -1,3 +1,11 @@
+## Overview
+
+The MySQL driver provides a reliable and high-performance connectivity to MySQL databases. It enables efficient execution of SQL queries, updates, and other database operations. The driver is designed to provide a seamless experience for interacting with MySQL, supporting various data types and advanced features of the database.
+
+### Key Features
+
+- High-performance and reliable database connectivity\n- Support for various SQL operations (Query, Execute, Batch)\n- Efficient handling of database connections and resources\n- Support for database-specific data types and features\n- Secure communication with TLS and authentication\n- GraalVM compatible for native image builds
+
 ## Package overview
 
 This Package bundles the latest MySQL driver so that mysql connector can be used in ballerina projects easily.
