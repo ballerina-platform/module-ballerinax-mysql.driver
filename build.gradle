@@ -19,7 +19,7 @@
 
 plugins {
     id "com.github.spotbugs" version "${githubSpotbugsVersion}"
-    id "com.github.johnrengelman.shadow" version "${githubJohnrengelmanShadowVersion}"
+    id "com.gradleup.shadow" version "${githubJohnrengelmanShadowVersion}"
     id "de.undercouch.download" version "${underCouchDownloadVersion}"
     id "net.researchgate.release" version "${researchgateReleaseVersion}"
 }
@@ -100,9 +100,18 @@ release {
     }
 }
 
-task build {
-    dependsOn("${packageName}-native:build")
-    dependsOn("${packageName}-ballerina:build")
+if (tasks.names.contains('build')) {
+    tasks.named('build') {
+        dependsOn("${packageName}-native:build")
+        dependsOn("${packageName}-ballerina:build")
+
+    }
+} else {
+    tasks.register('build') {
+        dependsOn("${packageName}-native:build")
+        dependsOn("${packageName}-ballerina:build")
+
+    }
 }
 
 publishToMavenLocal.dependsOn build
